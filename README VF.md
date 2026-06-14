@@ -38,7 +38,7 @@ Después de la pandemia por COVID-19 (2020–2021), diversos factores pudieron h
 
 ## 📦 Origen de los datos
 
-Los datos provienen del portal público **Datos Abiertos del Gobierno de México** ([datos.gob.mx](https://datos.gob.mx)), administrado por la Coordinación Nacional de Protección Civil (CNPC).
+Los datos provienen del portal público **Datos Abiertos del Gobierno de México** ([datos.gob.mx](https://datos.gob.mx))
 
 ### Tablas fuente (staging)
 
