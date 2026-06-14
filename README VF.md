@@ -55,7 +55,7 @@ Los tres archivos CSV se descargaron manualmente y se importaron como tablas sta
 ```
 ┌──────────────────────────────────────────────┐
 │  Datos Abiertos — datos.gob.mx               │
-│  Gestión de Riesgos (CNPC)                   │
+│  Gestión de Riesgos                          │
 │                                              │
 │  • Declaratorias de Desastre    (CSV)        │
 │  • Declaratorias de Emergencia  (CSV)        │
