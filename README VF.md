@@ -211,7 +211,7 @@ Este grano permite agregar libremente a cualquier nivel superior y comparar dire
 
 ### Decisiones de diseño
 
-**Schema `riesgos_proyecto` propio:** el equipo comparte la misma infraestructura Aurora, pero cada integrante trabaja en su propio schema. Esto evita colisiones entre preguntas analíticas distintas mientras se reutiliza la misma instancia.
+**Schema `riesgos_proyecto`:** se utilizó un schema propio dentro de la instancia Aurora compartida del módulo, lo que permite aislar las tablas del proyecto sin interferir con otros schemas de la base de datos mientras se reutiliza la misma infraestructura AWS.
 
 **Staging en TEXT:** cargar todas las columnas como `TEXT` en la staging evita que errores de formato (comas en montos, guiones en años) rompan la importación. Toda la conversión de tipos ocurre en Python con control de errores explícito.
 
@@ -227,44 +227,23 @@ Este grano permite agregar libremente a cualquier nivel superior y comparar dire
 
 Cinco queries en [`analisis/queries_analiticas.sql`](analisis/queries_analiticas.sql):
 
-### Q1 — Comparación pandemia vs post-pandemia (CTE + SUM CASE)
+### Q1 — Comparación pandemia vs post-pandemia 
 
 Compara el volumen de declaratorias durante la pandemia (2020–2021) contra el período post-pandemia (2022 en adelante) para cada combinación de estado, tipo de evento y fenómeno. Clasifica cada combinación como AUMENTO, DISMINUCIÓN o SIN CAMBIO.
 
-```sql
-WITH periodo AS (
-    SELECT
-        de.estado, dte.tipo_evento, df.tipo_fenomeno,
-        SUM(CASE WHEN dt.anio IN (2020,2021) THEN f.cantidad_eventos ELSE 0 END) AS eventos_pandemia,
-        SUM(CASE WHEN dt.anio >= 2022        THEN f.cantidad_eventos ELSE 0 END) AS eventos_postpandemia
-    FROM riesgos_proyecto.fact_eventos_desastres f
-    JOIN riesgos_proyecto.dim_estado      de  ON f.id_estado      = de.id_estado
-    JOIN riesgos_proyecto.dim_tiempo      dt  ON f.id_tiempo      = dt.id_tiempo
-    JOIN riesgos_proyecto.dim_fenomeno    df  ON f.id_fenomeno    = df.id_fenomeno
-    JOIN riesgos_proyecto.dim_tipo_evento dte ON f.id_tipo_evento = dte.id_tipo_evento
-    GROUP BY de.estado, dte.tipo_evento, df.tipo_fenomeno
-)
-SELECT *, eventos_postpandemia - eventos_pandemia AS diferencia_absoluta,
-    CASE WHEN eventos_postpandemia > eventos_pandemia THEN 'AUMENTO'
-         WHEN eventos_postpandemia < eventos_pandemia THEN 'DISMINUCIÓN'
-         ELSE 'SIN CAMBIO' END AS tendencia
-FROM periodo WHERE (eventos_pandemia + eventos_postpandemia) > 0
-ORDER BY diferencia_absoluta DESC;
-```
-
-### Q2 — Evolución anual con variación año a año (CTE + LAG)
+### Q2 — Evolución anual con variación año a año 
 
 Calcula el delta de eventos entre años consecutivos por tipo de declaratoria, con variación porcentual. Etiqueta cada año como Pre-pandemia, Pandemia o Post-pandemia.
 
-### Q3 — Ranking de estados pre vs post pandemia (CTE + RANK + DENSE_RANK)
+### Q3 — Ranking de estados pre vs post pandemia 
 
 Rankea los 32 estados por total de eventos históricos y calcula si su posición en el ranking empeoró o mejoró entre períodos. `DENSE_RANK` evita huecos en caso de empate; `cambio_ranking` positivo indica que el estado escaló en el ranking de riesgo post-pandemia.
 
-### Q4 — Incremento porcentual post-pandemia (CTE anidado + NULLIF)
+### Q4 — Incremento porcentual post-pandemia
 
 Calcula el incremento porcentual de eventos por estado y fenómeno y los clasifica en: NUEVO POST-PANDEMIA, INCREMENTO ALTO (>50%), INCREMENTO MODERADO, REDUCCIÓN o ESTABLE. `NULLIF` evita división por cero para estados sin eventos durante la pandemia.
 
-### Q5 — Análisis Pareto de concentración (SUM() OVER acumulado)
+### Q5 — Análisis Pareto de concentración 
 
 Calcula el porcentaje acumulado de eventos por estado ordenado de mayor a menor, identificando cuántos estados concentran el 80% del total nacional.
 
