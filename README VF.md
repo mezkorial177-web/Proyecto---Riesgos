@@ -13,7 +13,7 @@
 | **Schema** | `riesgos_proyecto.fact_eventos_desastres` en Aurora PostgreSQL (AWS) |
 | **ETL** | `etl_pipeline.ipynb` — pandas + SQLAlchemy + psycopg2, ejecutado en Jupyter |
 | **SQL avanzado** | 5 queries: CTE, `LAG()`, `RANK()`, `DENSE_RANK()`, `SUM() OVER` acumulado, `SUM CASE` como pivot |
-| **Dashboard** | Power BI — 5 visualizaciones conectadas a Aurora vía Direct Query |
+| **Dashboard** | Power BI — 5 visualizaciones conectadas a Aurora |
 
 ---
 
