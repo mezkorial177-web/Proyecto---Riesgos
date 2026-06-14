@@ -296,7 +296,7 @@ Los siguientes resultados se obtuvieron de los datos reales cargados en Aurora:
 ## 📚 Referencias
 
 - [Datos.gob.mx — Gestión de Riesgos](https://www.datos.gob.mx/dataset/gestion_riesgos)
-- Material del módulo: Modelo Dimensional (Kimball), ETL Python, SQL Avanzado, Power BI
+- Material del módulo 4
 
 ---
 
