@@ -8,7 +8,7 @@
 |-------|-------|
 | **Pregunta analítica** | ¿Qué cambios ocurrieron en el perfil de los desastres naturales en México después de la pandemia y qué estados experimentaron el mayor incremento en afectaciones? |
 | **Dataset** | Declaratorias de Emergencia, Declaratorias de Desastre y Proyectos Preventivos — Gestión de Riesgos |
-| **Fuente** | [datos.gob.mx — Gestión de Riesgos](https://datos.gob.mx/busca/dataset/gestion-de-riesgos)  |
+| **Fuente** | [datos.gob.mx — Gestión de Riesgos](https://www.datos.gob.mx/dataset/gestion_riesgos)  |
 | **Modelo** | Esquema estrella: 4 dimensiones + 1 tabla de hechos (`fact_eventos_desastres`) |
 | **Schema** | `riesgos_proyecto` en Aurora PostgreSQL (AWS) |
 | **ETL** | `etl_pipeline.ipynb` — pandas + SQLAlchemy + psycopg2, ejecutado en Jupyter |
