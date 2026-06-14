@@ -10,7 +10,7 @@
 | **Dataset** | Declaratorias de Emergencia, Declaratorias de Desastre y Proyectos Preventivos — Gestión de Riesgos |
 | **Fuente** | [datos.gob.mx — Gestión de Riesgos](https://www.datos.gob.mx/dataset/gestion_riesgos)  |
 | **Modelo** | Esquema estrella: 4 dimensiones + 1 tabla de hechos (`fact_eventos_desastres`) |
-| **Schema** | `riesgos_proyecto` en Aurora PostgreSQL (AWS) |
+| **Schema** | `riesgos_proyecto.fact_eventos_desastres` en Aurora PostgreSQL (AWS) |
 | **ETL** | `etl_pipeline.ipynb` — pandas + SQLAlchemy + psycopg2, ejecutado en Jupyter |
 | **SQL avanzado** | 5 queries: CTE, `LAG()`, `RANK()`, `DENSE_RANK()`, `SUM() OVER` acumulado, `SUM CASE` como pivot |
 | **Dashboard** | Power BI — 5 visualizaciones conectadas a Aurora vía Direct Query |
