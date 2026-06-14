@@ -116,15 +116,23 @@ Los tres archivos CSV se descargaron manualmente y se importaron como tablas sta
 ## 📁 Estructura del repositorio
 
 ```
-proyecto_desastres_mexico/
-├── README.md                          ← este archivo
+proyecto--riesgos/                         
 ├── scripts/
-│   └── dimensiones.sql                ← DDL completo: staging, dims, fact e índices
+│   └── etl_pipeline.ipynb                
+│   └── schema_ddl.sql                
 ├── analisis/
-│   └── queries_analiticas.sql         ← 5 queries con SQL avanzado
+│   └── queries_analiticas.sql         
 ├── dashboard/
-│   └── dashboard_proyecto.png         ← captura del dashboard en Power BI
-└── etl_pipeline.ipynb                 ← ETL completo en Jupyter Notebook
+│   └── dashboard_proyecto.png
+│   └── dashboard --> es el power bi
+│   └── vistas --> para a creacion de las tablas de dash
+├── docs/
+│   └── diagrama_modelo.png
+├── datasets/
+│   └── declaratorias_emergencia_4to_trim_2025
+│   └── proyectos_revencion_4otrim_2025
+│   └── declaratorias_desastre_4to_trim_2025
+└── README.md                  
 ```
 
 ---
