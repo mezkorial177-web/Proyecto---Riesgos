@@ -295,13 +295,11 @@ Los siguientes resultados se obtuvieron de los datos reales cargados en Aurora:
 
 ## 📚 Referencias
 
-- [Datos Abiertos — Gestión de Riesgos (datos.gob.mx)](https://datos.gob.mx/busca/dataset/gestion-de-riesgos)
-- [CENAPRED — Atlas Nacional de Riesgos](http://www.atlasnacionalderiesgos.gob.mx/)
-- [FONDEN — Reglas de Operación (DOF)](https://www.gob.mx/segob/documentos/reglas-de-operacion-del-fondo-de-desastres-naturales)
+- [Datos.gob.mx — Gestión de Riesgos](https://www.datos.gob.mx/dataset/gestion_riesgos)
 - Material del módulo: Modelo Dimensional (Kimball), ETL Python, SQL Avanzado, Power BI
 
 ---
 
 <p align="center">
-  Proyecto Final — Business Intelligence · Schema: <code>riesgos_proyecto</code>
+  Proyecto Final — Metzmellali Korial Espitia Santiago
 </p>
