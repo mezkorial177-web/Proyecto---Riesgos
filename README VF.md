@@ -230,27 +230,27 @@ Cinco queries en [`analisis/queries_analiticas.sql`](analisis/queries_analiticas
 ### Q1 — Comparación pandemia vs post-pandemia 
 
 Compara el volumen de declaratorias durante la pandemia (2020–2021) contra el período post-pandemia (2022 en adelante) para cada combinación de estado, tipo de evento y fenómeno. Clasifica cada combinación como AUMENTO, DISMINUCIÓN o SIN CAMBIO.
-Responde a lapregunta, ¿Cambió el volumen total de declaratorias después de la pandemia?
+Responde a la pregunta, ¿Cambió el volumen total de declaratorias después de la pandemia? 
 
 ### Q2 — Evolución anual con variación año a año 
 
 Calcula el delta de eventos entre años consecutivos por tipo de declaratoria, con variación porcentual. Etiqueta cada año como Pre-pandemia, Pandemia o Post-pandemia.
-Responde a lapregunta, ¿En qué años hubo los mayores picos de actividad?
+Responde a la pregunta, ¿En qué años hubo los mayores picos de actividad?
 
 ### Q3 — Ranking de estados pre vs post pandemia 
 
 Rankea los 32 estados por total de eventos históricos y calcula si su posición en el ranking empeoró o mejoró entre períodos. `DENSE_RANK` evita huecos en caso de empate; `cambio_ranking` positivo indica que el estado escaló en el ranking de riesgo post-pandemia.
-Responde a lapregunta, ¿Qué estados concentran más declaratorias históricamente?
+Responde a la pregunta, ¿Qué estados concentran más declaratorias históricamente?
 
 ### Q4 — Incremento porcentual post-pandemia
 
 Calcula el incremento porcentual de eventos por estado y fenómeno y los clasifica en: NUEVO POST-PANDEMIA, INCREMENTO ALTO (>50%), INCREMENTO MODERADO, REDUCCIÓN o ESTABLE. `NULLIF` evita división por cero para estados sin eventos durante la pandemia.
-Responde a lapregunta, ¿Qué estados y fenómenos tuvieron el mayor incremento porcentual de eventos después de la pandemia?
+Responde a la pregunta, ¿Qué estados y fenómenos tuvieron el mayor incremento porcentual de eventos después de la pandemia?
 
 ### Q5 — Análisis Pareto de concentración 
 
 Calcula el porcentaje acumulado de eventos por estado ordenado de mayor a menor, identificando cuántos estados concentran el 80% del total nacional.
-Responde a lapregunta, ¿Cuántos estados concentran el 80% de todos los eventos? (Regla 80/20 aplicada a desastres)
+Responde a la pregunta, ¿Cuántos estados concentran el 80% de todos los eventos? (Regla 80/20 aplicada a desastres)
 
 
 ## 📊 Dashboard — Power BI
