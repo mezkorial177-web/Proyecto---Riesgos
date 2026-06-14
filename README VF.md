@@ -19,7 +19,7 @@
 
 ## 🎯 Problema y motivación
 
-México es uno de los países con mayor exposición a fenómenos naturales extremos: huracanes en ambos litorales, inundaciones en el sureste, sequías en el norte y sismos en el centro y sur. El **FONDEN (Fondo Nacional de Desastres)** y el **CENAPRED** documentan estas afectaciones a través de declaratorias oficiales de emergencia y desastre.
+México es uno de los países con mayor exposición a fenómenos naturales extremos: huracanes, inundaciones en el sureste, sequías en el norte y sismos en el centro y sur. Con datos de **Secretaría de Seguridad y Protección Ciudadana (SSPC)** se realizara un análisis de estas afectaciones a través de declaratorias oficiales de emergencia y desastre.
 
 Después de la pandemia por COVID-19 (2020–2021), diversos factores pudieron haber modificado los patrones históricos de afectación:
 
