@@ -153,28 +153,21 @@ ORDER BY table_name;
 --           stg_declaratorias_emergencia, stg_proyectos_prevencion
 ```
 
-### 2. Instalar dependencias
-
-```python
-# Ejecutar en Jupyter antes de correr el ETL
-!pip install pandas sqlalchemy psycopg2-binary tqdm
-```
-
-### 3. Ejecutar el ETL
+### 2. Ejecutar el ETL
 
 Abrir `etl_pipeline.ipynb` en Jupyter, actualizar los parámetros de conexión en la primera celda y ejecutar todas las celdas en orden:
 
 ```python
 SCHEMA    = "riesgos_proyecto"
-HOST      = "aurora-mod4.cluster-cmnqz9gfw97z.us-east-1.rds.amazonaws.com"
+HOST      = "aurora-mod4.cluster-cmnqz9gfw97z.us-east-1.rds.amazonaws.com"   # ← reemplazar
 DATABASE  = "northwind"
 USER      = "postgres"
 PASSWORD  = "TU_PASSWORD"   # ← reemplazar
 ```
 
-El ETL lee directamente desde las tablas staging en Aurora — **no requiere archivos CSV locales**.
+El ETL lee directamente desde las tablas staging en Aurora — **no requiere archivos CSV locales** (ya que se cargaron previos en el DBeaver)
 
-### 4. Ejecutar las queries analíticas
+### 3. Ejecutar las queries analíticas
 
 Abrir `analisis/queries_analiticas.sql` en DBeaver y ejecutar cada query de forma individual.
 
